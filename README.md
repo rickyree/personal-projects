@@ -18,3 +18,5 @@ The databank from Johns Hopkins Coronavirus Resource Center is analyzed. A file 
 https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports  
 
 Outputs various statistics comparing Covid-19 cases of various countries according to user input. 
+
+Created using Rstudio. 
