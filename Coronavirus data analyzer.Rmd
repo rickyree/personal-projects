@@ -129,6 +129,7 @@ country[x] <- toupper(country[x])
 
 countries <- toupper(countries)
 
+
 #creating dataframe for countries: goes through each row to select the countries that match user input
 mainsub <- data.frame()
 
@@ -188,8 +189,8 @@ for (x in 1:length(country)){
     }
   }
   
+  
   #erase all rows of US apart from the specified state
-    
   y = 1
     repeat{
       
@@ -214,6 +215,7 @@ for (x in 1:length(country)){
     }
   }
 } 
+
 
 #in case there were two inputs for US, each with a different state, in order for both the states to not be erased, their rows must be deducted from rowstoerase
 for (x in 1:length(country)){
@@ -250,7 +252,6 @@ if('US' %in% country == TRUE && include.allstates == FALSE){
 }
 
 ```
-
 
 
 ```{r}
@@ -433,6 +434,7 @@ if (operations == 1 | operations == 5){
 #function for significance testing
 if (operations == 2 | operations == 5){
   cat("\n\nThe following displays significance testing across the countries/states: \n\n")
+  
   if (length(unique(mainsub$comparison.levels)) <= 2){
     t.test(mainsub$Mortality ~ mainsub$comparison.levels)
     
@@ -467,7 +469,6 @@ for (x in 1:length(unique(mainsub$comparison.levels))){
         " is ", highestregions[x], ". ")
   }
 }
-
 
 
 ```
