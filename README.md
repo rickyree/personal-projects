@@ -22,6 +22,7 @@ STAT_ICA1_21.rdata : database containing viral load of different types of viruse
 hl2320_STAT.Rmd and hl2320_STAT.html : Contains the data analysis process in a markdown file in Rmd and html format. Needs STAT_ICA1_21.rdata to run. 
 
 
+
 ### Coronavirus data analyzer 
 An algorithm that analyzes worldwide Covid-19 cases. 
 
@@ -34,5 +35,6 @@ https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_c
 Corona-12-10-2020.csv : database containing Covid-19 cases of different countries. 
 
 Coronavirus data analyzer.Rmd : Outputs summary statistics comparing Covid-19 cases of various countries according to user input. Can use Corona-12-10-2020.csv or any other files from the link above. Run this file and answer questions in the console for customized analysis of cases in chosen countries. 
+
 
 
