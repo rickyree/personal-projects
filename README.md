@@ -12,7 +12,7 @@ Here are a few projects that I have been working on.
 
 ## Projects 
 
-### - Income predictor - 
+### - Income Predictor - 
 Linear classification to predict whether a person's income is above or below 50K/year (uses tensorflow). Data obtained from the UCI machine learning database (https://archive.ics.uci.edu/ml/machine-learning-databases/adult/), which was extracted from the American census bureau database. 
 
 #### Files 
@@ -34,7 +34,7 @@ STAT_ICA1_21.rdata : database containing viral load of different types of viruse
 hl2320_STAT.Rmd and hl2320_STAT.html : Contains the data analysis process in a markdown file in Rmd and html format. Analyses STAT_ICA1_21.rdata. 
 
 
-### - Coronavirus data analyzer -
+### - Coronavirus Data Analyzer -
 An algorithm that analyzes worldwide Covid-19 cases. 
 
 The databank from Johns Hopkins Coronavirus Resource Center is analyzed. An example database file is included, but any file from any date in this link can also be used: 
