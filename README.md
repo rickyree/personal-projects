@@ -1,7 +1,7 @@
 ## Introduction 
 Hi, I'm Rick. 
 
-I'm a uni student studying biomed who recently got into coding. 
+I'm a uni student studying biomed who codes for fun. 
 
 I like simple solutions to complex problems. I have been using R and python to organize and draw conclusions from big data. 
 
