@@ -11,22 +11,6 @@ Performs various analyses on countries (for US, can also specify state) of covid
 
 https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports  
 
-
-Summary of important variables: 
-
-raw: raw dataset
-main, main1: temporarily stores dataset for data cleaning
-mainsub: cleaned dataset, filtered to contain only countries of user input
-
-countries: list of available countries for analysis
-country: vector containing countries of user input (selected from 'countries')
-state: vector containing states if the countries is US (for each element in 'country', if the country is US, the state is stored, else, '.' is stored)
-
-comparison.levels: column added to 'mainsub' to perform comparisons. States (if US) and other countries are assigned in this same column to allow for direct comparisons
-Mortality: column added to 'mainsub' as deaths/confirmed cases
-Mortalitypercent: column added to 'mainsub' as Mortality*100
-
-
 Things to finalize: 
 - add country names to rows in describeBy
 - get describeBy to show more than 2 sig figs
