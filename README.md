@@ -24,6 +24,16 @@ adult.test : database used for testing the model.
 predict_income.py : linear classification model to predict a person's income. Uses adult.data to train and adult.test to evaulate. 
 
 
+### - height_analyzer - 
+Analyzes heights of 18 yr olds in different countries (source: Our World in Data). Takes number of countries to compare and countries as input, and outputs a line plot showing height changes of each country over time, as well as a boxplot comparing people's heights in different countries. 
+
+#### Files 
+
+main.csv: database containing mean height for each country, year (1985 ~ 2019) and age. 
+
+height_analyzer.py : python code that processes main.csv to produce a boxplot and a line plot according to user's input of countries. 
+
+
 ### - R Stat Project -
 A markdown notebook in R that I created for the STAT module in my course. Explores a fictional anti-viral drug VK001's therapeutic effects on different types of viruses. Demonstrates my skills in utiliizing R as a tool in data analysis and presentation. 
 
