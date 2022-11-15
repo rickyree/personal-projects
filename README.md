@@ -28,7 +28,7 @@ adult.test : database used for testing the model.
 predict_income.py : linear classification model to predict a person's income. Uses adult.data to train and adult.test to evaulate. 
 
 
-### - height_analyzer - 
+### - Height Analyzer - 
 Analyzes heights of 18 yr olds in different countries (source: Our World in Data). Takes number of countries to compare and countries as input, and outputs a line plot showing height changes of each country over time, as well as a boxplot comparing people's heights in different countries. 
 
 #### Files 
