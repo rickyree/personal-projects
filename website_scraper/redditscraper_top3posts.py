@@ -9,7 +9,7 @@ Original file is located at
 
 import lxml 
 from bs4 import BeautifulSoup 
-import request 
+import requests 
 
 
 userinput = str(input('Which thread would you like to look up? ')) 
@@ -22,25 +22,27 @@ while success == False:
   soup = BeautifulSoup(data, 'lxml')
   items = [a for a in soup.select('._1poyrkZ7g36PawDueRza-J')] 
 
+
+  #uses css class selectors to extract relevant data (title, content, votes, comments)
+  def class_select(css_class): 
+      html = [] 
+      for x in range(len(items)): 
+        html.append(items[x].select(css_class)) 
+      return html 
   
-  #uses css class selectors to extract relevant data 
-  post = [] 
-  content = [] 
-  votes = [] 
-  comment = []
-  for x in range(len(items)): 
-    post.append(items[x].select('._eYtD2XCVieq6emjKBH3m')) 
-    content.append(items[x].select('._292iotee39Lmt0MkQZ2hPV')) 
-    votes.append(items[x].select('._1rZYMD_4xY3gRcSS3p8ODO')) 
-    comment.append(items[x].select('.FHCV02u6Cp2zYL0fhQPsO')) 
+  post = class_select('._eYtD2XCVieq6emjKBH3m') 
+  content = class_select('._292iotee39Lmt0MkQZ2hPV') 
+  votes = class_select('._1rZYMD_4xY3gRcSS3p8ODO') 
+  comment = class_select('.FHCV02u6Cp2zYL0fhQPsO') 
+  
 
   #if the request returns blank data try again  
-  if not post: 
+  if not items: 
     print('Loading data...')
   else:  
     success = True 
 
-  
+
 #output of the top 3 posts 
 print('\nThese are the top 3 posts of r/', userinput,'as of today: \n') 
 for x in range(3): 
