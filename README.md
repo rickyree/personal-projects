@@ -2,15 +2,19 @@
 Hi, I'm Rick. 
 
 I'm a uni student studying biomed who codes for fun. 
-
-I like simple solutions to complex problems. I have been using R and python to organize and draw conclusions from big data. 
-
-I am particularly interested in coding's applications in biomedical research. 
-
 Here are a few projects that I have been working on.
 
 
 ## Projects 
+
+### - Website scraper - 
+Two projects involving scraping data from the online forum Reddit (https://www.reddit.com/). 
+
+#### Files 
+redditscraper_notifier.py : notifies the user when there is a new post in r/minecraft, then the program terminates (r/minecraft is chosen as there is a lot of new posts per time). 
+
+redditscraper_top3posts.py : returns the title, content, votes and comments of the top 3 posts of a reddit thread chosen by the user. For example, enter 'minecraft' to obtain a summary of the top 3 posts of r/minecraft. 
+
 
 ### - Income Predictor - 
 Linear classification to predict whether a person's income is above or below 50K/year (uses tensorflow). Data obtained from the UCI machine learning database (https://archive.ics.uci.edu/ml/machine-learning-databases/adult/), which was extracted from the American census bureau database. 
