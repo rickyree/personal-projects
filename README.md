@@ -13,7 +13,7 @@ Two projects involving scraping data from the online forum Reddit (https://www.r
 #### Files 
 redditscraper_notifier.py : notifies the user when there is a new post in r/minecraft, then the program terminates (r/minecraft is chosen as there is a lot of new posts per time). 
 
-redditscraper_top3posts.py : returns the title, content, votes and comments of the top 3 posts of a reddit thread chosen by the user. For example, enter 'minecraft' to obtain a summary of the top 3 posts of r/minecraft. 
+redditscraper_top3posts.py : returns the title, content, votes and comments of today's top 3 posts of a reddit thread chosen by the user. For example, enter 'minecraft' to obtain a summary of the top 3 posts of r/minecraft. 
 
 
 ### - Income Predictor - 
