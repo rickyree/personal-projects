@@ -45,7 +45,7 @@ A markdown notebook in R that I created for the STAT module in my course. Explor
 
 STAT_ICA1_21.rdata : database containing viral load of different types of viruses according to VK001 treatment. My job is to figure out for which virus VK001 is effective against. 
 
-hl2320_STAT.Rmd and hl2320_STAT.html : Contains the data analysis process in a markdown file in Rmd and html format. Analyses STAT_ICA1_21.rdata. 
+hl2320_STAT.Rmd : Contains the data analysis process in a markdown file in Rmd and html format. Analyses STAT_ICA1_21.rdata. 
 
 
 ### - Coronavirus Data Analyzer -
