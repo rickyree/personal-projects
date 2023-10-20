@@ -8,7 +8,7 @@ Here are a few projects that I have been working on.
 ## Projects 
 
 ### - Website scraper - 
-Two projects involving scraping data from the online forum Reddit (https://www.reddit.com/). 
+Two projects involving scraping data from the online forum Reddit. 
 
 #### Files 
 redditscraper_notifier.py : notifies the user when there is a new post in r/minecraft, then the program terminates (r/minecraft is chosen as there is a lot of new posts per time). 
