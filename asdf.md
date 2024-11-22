@@ -9,7 +9,7 @@ Takes a folder containing the PDB files and output file (should be named as 'out
 ### results 
 Folder containing graphs correlating obtained complementarity scores with kd/docking scores. Arranged by publications that published the residue heatmap. Results of running affinity_scorer.py will be stored here. 
 
-### my_curated 
+### example_dataset 
 Sample database containing pdb files and their corresponding kd values. Set this as rootdir in affinity_scorer.py. 
 
 ### residuemaps 
