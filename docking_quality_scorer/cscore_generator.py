@@ -5,7 +5,7 @@ from math import *
 import os 
 import Bio 
 from Bio.PDB import PDBParser 
-import anarci 
+import anarci
 from difflib import SequenceMatcher 
 import matplotlib.pyplot as plt 
 from scipy.stats import pearsonr 
