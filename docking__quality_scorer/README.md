@@ -1,5 +1,5 @@
 ## Welcome! 
-This is a scoring system for assessing antibody-antigen docking quality by assessing the contact preferences (c-score) of each contacting residue pairs. To get started, run the file cscore_generator.py, specifying the `-b` option with the path to the PDB files. 
+This is a scoring system for assessing antibody-antigen docking quality by assessing the contact preferences (c-score) of each contacting residue pairs. To get started, run the file cscore_generator.py, specifying the `-b` option with the path to the PDB files. Or `-h` for details. 
 
 ## Files  
 
