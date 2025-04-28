@@ -14,7 +14,7 @@ Results of running cscore_generator.py will be stored here. After running, 2 fil
 * generated_scores.csv: csv file of all c-scores and labels for each complex. 
 * pie.png: pie chart showing the proportions of complex labels.  
 
-### example_files 
+### example_files.zip 
 Sample database containing PDB files to generate c-scores for. Set this with the `-b` option in cscore_generator.py. Note these are SAbDab structures and not docking models. 
 
 ### residuemap.csv 
