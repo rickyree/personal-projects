@@ -7,7 +7,7 @@ Here are a few projects that I have been working on.
 
 ## Projects 
 
-### - Scoring system for docking poses - 
+### - Docking quality scorer - 
 Scores antibody-antigen PDB files to generate a score based on residue contact preferences (c-score) and estimates its accuracy. Further details in folder. 
 
 
