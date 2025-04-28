@@ -14,8 +14,8 @@ Results of running cscore_generator.py will be stored here. After running, 2 fil
 * generated_scores.csv: csv file of all c-scores and labels for each complex. 
 * pie.png: pie chart showing the proportions of complex labels.  
 
-### example_dataset 
-Sample database containing pdb files to generate c-scores for. Set this as rootdir in affinity_scorer.py. Note these are SAbDab structures and not docking models. 
+### example_files 
+Sample database containing PDB files to generate c-scores for. Set this with the `-b` option in cscore_generator.py. Note these are SAbDab structures and not docking models. 
 
 ### residuemap.csv 
 CSV file containing contact preference residue heatmaps. 
