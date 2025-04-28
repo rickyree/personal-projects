@@ -7,7 +7,7 @@ This is a scoring system for assessing antibody-antigen docking quality by asses
 Takes a folder containing the PDB files of docking complexes to generate c-scores for. Calculates c-scores from contacting residue pairs and returns labels for each complex to discard or carry forward to further analysis in the results folder. 
 
 ### util.py 
-File containing all internal functions 
+File containing all internal functions. 
 
 ### results 
 Results of running cscore_generator.py will be stored here. After running, 2 files are generated: 
