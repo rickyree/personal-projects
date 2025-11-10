@@ -1,21 +1,9 @@
 import pandas as pd
-import io
-import numpy as np
 from math import *
 import os 
-import Bio 
-from Bio.PDB import PDBParser 
-import anarci
-from difflib import SequenceMatcher 
-import matplotlib.pyplot as plt 
-from scipy.stats import pearsonr 
-from Bio.PDB import PDBIO 
-from Bio.PDB import NeighborSearch 
-from Bio.PDB.StructureBuilder import StructureBuilder 
 import argparse 
-import util
-from scipy.stats import ks_2samp 
-import seaborn as sns
+from util import *
+
 
 
 
@@ -47,7 +35,7 @@ def main():
 
     required_args.add_argument('-b', '--base', type = str, required = True, help = 'Path where PDB files are stored.\n') 
 
-    parser.add_argument('-hm', '--heatmap_csv', type = str, default = 'residuemap.csv', help = 'Path where residue heatmap is stored. ') 
+    parser.add_argument('-hm', '--heatmap_csv', type = str, default = 'residuemap/residuemap.csv', help = 'Path where residue heatmap is stored. ') 
 
     parser.add_argument('-d', '--distance', type = int, default = 5, help = 'Distance cutoff of contact pairs in Angstroms (default = 5A). ') 
 
@@ -72,7 +60,7 @@ def main():
     #root: base directory of pdb files 
     #scores_all: df to store scores by CDR 
     #filelist: list of PDB files to analyse
-    heatmap = util.create_heatmap(heatmap_csv, by_CDR)
+    heatmap = create_heatmap(heatmap_csv, by_CDR)
     obtained_scores = []
     blanks = []
     filelist = [] 
@@ -80,34 +68,34 @@ def main():
         
 
      
-    filelist = util.searchdir_files(base) 
+    filelist = searchdir_files(base) 
 
     for file in filelist: 
         print(os.path.basename(file))
         
 
         #classifying PDBs into heavy, light and antigen chains and identifying CDR regions: 
-        structure, numbering, alignment_details = util.pdb_label(file) 
+        structure, numbering, alignment_details = pdb_label(file) 
         
         #classifying residues into CDRs and IMGT numbering: 
         #H, L: sequence of H and L chains 
         #residues_sorted: df containing information of all the residues, their chains (H/L), position, IMGT number and CDR region: 
-        H, L, residues_sorted = util.chain_and_CDR_allocation(structure, numbering, alignment_details) 
+        H, L, residues_sorted = chain_and_CDR_allocation(structure, numbering, alignment_details) 
 
         #labeling chain and CDR regions and skip to next file if no H or L chain: 
-        structure, antibody_chains, antigen_chains, CDR_residues, residues_sorted, warning = util.label_chains_and_CDR(structure, H, L, residues_sorted) 
+        structure, antibody_chains, antigen_chains, CDR_residues, residues_sorted, warning = label_chains_and_CDR(structure, H, L, residues_sorted) 
         if warning: 
             print(antibody_chains, CDR_residues) 
             continue 
         
         #obtaining contacting residue pairs: 
-        contact_pairs, hindrance_counts = util.get_contact_pairs(CDR_residues, antibody_chains, antigen_chains, structure, distance, only_H3) 
+        contact_pairs, hindrance_counts = get_contact_pairs(CDR_residues, antibody_chains, antigen_chains, structure, distance, only_H3) 
         if len(contact_pairs) < 1: 
             print('no contact pairs found! ') 
             continue 
         
         #scoring residue pairs: 
-        score, contact_pairs, score_by_CDR, label = util.residue_score(CDR_residues, contact_pairs, heatmap, by_CDR, only_H3) 
+        score, contact_pairs, score_by_CDR, label = residue_score(CDR_residues, contact_pairs, heatmap, by_CDR, only_H3) 
         
         
         if not only_H3 and by_CDR: 
@@ -128,10 +116,10 @@ def main():
             print('c-score: ', score, '\n') 
     
     #export scores and labels as csv: 
-    util.export(obtained_scores)
+    export_files(obtained_scores)
 
     #export pi chart of labels: 
-    util.labels_pichart(obtained_scores) 
+    labels_pichart(obtained_scores) 
 
     
 

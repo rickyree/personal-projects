@@ -1,18 +1,12 @@
 import pandas as pd
-import io
 import numpy as np
 from math import *
 import os 
-import Bio 
 from Bio.PDB import PDBParser 
 import anarci 
 from difflib import SequenceMatcher 
 import matplotlib.pyplot as plt 
-from scipy.stats import pearsonr 
-from Bio.PDB import PDBIO 
 from Bio.PDB import NeighborSearch 
-from Bio.PDB.StructureBuilder import StructureBuilder 
-import argparse 
 from collections import Counter 
 
 
@@ -72,7 +66,7 @@ def create_heatmap(raw, by_CDR = False):
 
 #search path for output file (should be formatted as "output.csv") and assigning docking scores to each pdb: 
 def searchdir_output(mypath, docking_scores): 
-    for (root, dirs, files) in os.walk(mypath): 
+    for (root, _, files) in os.walk(mypath): 
         for file in files: 
             if file == 'output.csv': 
                 for index, row in pd.read_csv(os.path.join(root, file)).iterrows(): 
@@ -88,7 +82,7 @@ def searchdir_output(mypath, docking_scores):
 #search path for pdb files and make an array of the files for analysis: 
 def searchdir_files(mypath): 
     filelist = [] 
-    for (root, dirs, files) in os.walk(mypath): 
+    for (root, _, files) in os.walk(mypath): 
         for file in files: 
             if (len(file) >= 4) and (file[-3:] == 'pdb'): 
                     filelist.append(os.path.join(root, file)) 
@@ -373,8 +367,9 @@ def residue_score(CDR_residues, contact_pairs, heatmap, by_CDR, only_H3):
     return score, contact_pairs, score_by_CDR, label
 
 
-def export(obtained_scores): 
+def export_files(obtained_scores): 
     results = pd.DataFrame(obtained_scores, columns = ['file', 'c-score', 'label']) 
+    os.makedirs('results', exist_ok = True)
     results.to_csv('results/results.csv') 
 
 
